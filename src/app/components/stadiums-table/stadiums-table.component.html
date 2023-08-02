@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Capacity</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let s of stadiumsTab">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.capacity}}</td>
+            <td>{{s.country}}</td>
+            <td>
+                <button class="btn btn-success" (click)="goToInfo(s.id)">Display</button>
+                <button class="btn btn-danger" (click)="deleteStadium(s.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,57 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Add Stadium</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="stadiumForm">
+                    <div class="form-group">
+                        <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div *ngIf="stadiumForm.controls['name'].invalid && 
+              (stadiumForm.controls['name'].touched||stadiumForm.controls['name'].dirty)">
+                        <div *ngIf="stadiumForm.controls['name'].errors.required">Name is required</div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" formControlName="country" class="form-control" placeholder="Country">
+                    </div>
+                    <div *ngIf="stadiumForm.controls['country'].invalid && 
+              (stadiumForm.controls['country'].touched||stadiumForm.controls['country'].dirty)">
+                        <div *ngIf="stadiumForm.controls['country'].errors.required">Country is required</div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="number" formControlName="capacity" class="form-control" placeholder="Capacity">
+                    </div>
+                    <div *ngIf="stadiumForm.controls['capacity'].invalid && 
+            (stadiumForm.controls['capacity'].touched||stadiumForm.controls['capacity'].dirty)">
+                        <div *ngIf="stadiumForm.controls['capacity'].errors.required">Capacity is required</div>
+
+                    </div>
+
+
+                    <div class="form-group text-center">
+                        <input type="submit" (click)="addStadium()" class="btn btn-primary py-3 px-5"
+                            value="Add Stadium">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
