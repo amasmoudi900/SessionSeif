@@ -13,7 +13,7 @@ export class MatchFormComponent implements OnInit {
   matches: any = allMatches;
   matchForm: FormGroup;
   matchId: any;
-  title: string = "add match";
+  title: string = "Add match";
   match: any = {};
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,7 +23,7 @@ export class MatchFormComponent implements OnInit {
   ngOnInit() {
     // Get Id from Active URL
     this.matchId = this.activatedRoute.snapshot.paramMap.get("id");
-    if (this.matchId) {
+    if (this.matchId == true) {
       this.title = "edit match";
       this.matchService.getMatchById(this.matchId).subscribe(
         (response) => {
@@ -33,7 +33,7 @@ export class MatchFormComponent implements OnInit {
     }
   }
   addOrEditMatch() {
-    console.log("this is", this.match);
+    console.log("This is", this.match);
     if (this.matchId) {
       this.matchService.editMatch(this.match).subscribe(
         (response) => {
